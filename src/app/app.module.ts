@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { VolunteerComponent } from './containers/volunteer/volunteer.component';
@@ -11,7 +10,6 @@ import { MatSliderModule } from '@angular/material/slider';
 import { LogincompComponent } from './components/logincomp/logincomp.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { FormsModule } from '@angular/forms';
-import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { UserupdateComponent } from './components/userupdate/userupdate.component';
 import { UserloginService } from './services/users-services/userlogin.service';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -20,7 +18,6 @@ import { UsersignupService } from './services/users-signup/usersignup.service';
 import { ViewComponent } from './containers/view/view.component';
 import { GuestComponent } from './containers/guest/guest.component';
 import { CandidateComponent } from './containers/candidate/candidate.component';
-import { GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule } from 'angularx-social-login';
 import { AuthModule } from '@auth0/auth0-angular';
 import { VolunteerServicesService } from './containers/volunteer/services/volunteer-services.service';
 import { ModalComponent } from './containers/candidate/modal/modal.component';
@@ -55,8 +52,6 @@ import { MoviePageComponent } from './components/movie-page/movie-page.component
     MatSliderModule,
     FormsModule,
     HttpClientModule,
-    MDBBootstrapModule.forRoot(),
-    SocialLoginModule,
     AuthModule.forRoot({
       domain: 'dev-hxnqwb0s.us.auth0.com',
       clientId: 'eD5MJhiXrKu2mLcQaPQbvvxMCRlJVJLS'
