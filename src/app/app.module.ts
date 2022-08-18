@@ -52,10 +52,6 @@ import { MoviePageComponent } from './components/movie-page/movie-page.component
     MatSliderModule,
     FormsModule,
     HttpClientModule,
-    AuthModule.forRoot({
-      domain: 'dev-hxnqwb0s.us.auth0.com',
-      clientId: 'eD5MJhiXrKu2mLcQaPQbvvxMCRlJVJLS'
-    }),
   ],
   providers: [UserloginService, UsersignupService, VolunteerServicesService, {
     provide: HTTP_INTERCEPTORS,
