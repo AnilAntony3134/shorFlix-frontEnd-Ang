@@ -1,0 +1,33 @@
+<div class="login-container">
+    <div class="login-wrapper">
+        <div class="login-left">
+            <div class="login-form">
+                <h1>A good storyteller is the most powerful person in the world</h1>
+                <h4>Login to Your Account</h4>
+                <form (ngSubmit)="userVerify()" #userlogin = "ngForm">
+                    <!-- <i class="fa-solid fa-user"></i> -->
+                    <input type="email" class="form-control" placeholder="Email" name="uname" [(ngModel)]="User.email" #email="ngModel" pattern="^[a-z0-9.%+]+@[a-z0-9.-]+\.[a-z]{2,4}" required>
+                    <div *ngIf ="email.touched && email.invalid" class="alert alert-danger">
+                        <div *ngIf="email.errors?.['required']">
+                            Email is required.
+                        </div>
+                        <div *ngIf="email.errors?.['pattern']">
+                            Invalid Email.
+                        </div>
+                    </div>
+                    <!-- <i class="fa-solid fa-lock"></i> -->
+                    <input type="password" class="form-control" placeholder="Password" name="password" [(ngModel)]="User.password" minlength="6" required>
+                    <span>Forget password?</span>
+                    <button type="submit">LogIn</button>
+                </form>
+                <!-- <button btn btn-block (click)="googleSignIn()">Login With Google</button> -->
+                <!-- <asl-google-signin-button></asl-google-signin-button> -->
+                <p>Not a member register now? <a [routerLink]="['/signup']">Register now</a></p>
+            </div>
+        </div>
+        <div class="login-right">
+            <img class="login-right-bannerimg" src="https://static.toiimg.com/photo/msid-91646261/91646261.jpg" alt="wallpapers">
+        </div>
+    </div>
+</div>
+<!-- [disabled]="!userlogin.valid"  [class.is-invalid]="email.invalid && email.touched"-->
