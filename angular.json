@@ -105,11 +105,13 @@
           }
         },
         "deploy": {
-          "builder": "@netlify-builder/deploy:deploy",
+          "builder": "@angular/fire:deploy",
           "options": {
-            "outputPath": "dist/webapp",
-            "netlifyToken": "lkZmtlJjYJjHNdGtQxUjKd8zmIgsci2TAxyIlgyQ7CY",
-            "siteId": "80efe2f3-ce3a-4427-ad32-bfc8c30ea53e"
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "webapp:build:production",
+            "firebaseProject": "shotflix-52764",
+            "firebaseHostingSite": "shotflix-52764"
           }
         }
       }

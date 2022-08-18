@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "shotflix-52764": {
+      "hosting": {
+        "webapp": [
+          "shotflix-52764"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "shotflix-52764"
+  }
+}
