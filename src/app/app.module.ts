@@ -5,7 +5,6 @@ import { AppComponent } from './app.component';
 import { VolunteerComponent } from './containers/volunteer/volunteer.component';
 import { LoginComponent } from './containers/common/login/login.component';
 import { HeaderComponent } from './components/header/header.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
 import { LogincompComponent } from './components/logincomp/logincomp.component';
 import { SignupComponent } from './components/signup/signup.component';
@@ -48,7 +47,6 @@ import { MoviePageComponent } from './components/movie-page/movie-page.component
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule,
     MatSliderModule,
     FormsModule,
     HttpClientModule,
