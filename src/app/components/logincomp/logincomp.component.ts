@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserloginService } from '../../services/users-services/userlogin.service';
-import { AuthService } from '@auth0/auth0-angular';
+// import { AuthService } from '@auth0/auth0-angular';
 @Component({
   selector: 'app-logincomp',
   templateUrl: './logincomp.component.html',
@@ -15,7 +15,7 @@ export class LogincompComponent implements OnInit {
   constructor(
     private auth: UserloginService,
     private router: Router, 
-    public googleAuthService : AuthService
+    // public googleAuthService : AuthService
     ) { }
 
   ngOnInit(): void {
@@ -49,8 +49,8 @@ export class LogincompComponent implements OnInit {
           }
     )
   }
-  public googleSignIn(): void{
-    this.googleAuthService.loginWithRedirect()
+  // public googleSignIn(): void{
+  //   this.googleAuthService.loginWithRedirect()
       // .then((data)=>{
       //   localStorage.setItem('google_auth',JSON.stringify(data));
       //   this.router.navigateByUrl('/volunteer').then();
@@ -58,7 +58,7 @@ export class LogincompComponent implements OnInit {
       // .catch((e)=>{
       //   console.log('Could not submit google auth',e);
       // })
-  }
+  // }
   public onSignIn(googleUser:any):void {
     var profile = googleUser.getBasicProfile();
     console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.

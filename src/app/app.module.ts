@@ -13,6 +13,7 @@ import { UserupdateComponent } from './components/userupdate/userupdate.componen
 import { UserloginService } from './services/users-services/userlogin.service';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 // import { TokenInterceptorService } from './components/logincomp/token-interceptor.service';
+// import { AuthModule } from '@auth0/auth0-angular';
 import { UsersignupService } from './services/users-signup/usersignup.service';
 import { ViewComponent } from './containers/view/view.component';
 import { GuestComponent } from './containers/guest/guest.component';
@@ -56,6 +57,10 @@ import { MoviePageComponent } from './components/movie-page/movie-page.component
   //   useClass: TokenInterceptorService,
   //   multi: true
   // },
+  // AuthModule.forRoot({
+  //   domain: 'YOUR_AUTH0_DOMAIN',
+  //   clientId: 'YOUR_AUTH0_CLIENT_ID',
+  // })
 ],
   bootstrap: [AppComponent]
 })
