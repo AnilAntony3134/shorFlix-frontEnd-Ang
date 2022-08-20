@@ -166,7 +166,7 @@
     padding: 10px;
     border: none;
     background-color: forestgreen;
-    justify-content: end;
+    justify-content: flex-end;
     position: fixed;
     left: 50;
     top: 50;

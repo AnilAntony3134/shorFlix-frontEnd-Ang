@@ -12,12 +12,11 @@ import { FormsModule } from '@angular/forms';
 import { UserupdateComponent } from './components/userupdate/userupdate.component';
 import { UserloginService } from './services/users-services/userlogin.service';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { TokenInterceptorService } from './components/logincomp/token-interceptor.service';
+// import { TokenInterceptorService } from './components/logincomp/token-interceptor.service';
 import { UsersignupService } from './services/users-signup/usersignup.service';
 import { ViewComponent } from './containers/view/view.component';
 import { GuestComponent } from './containers/guest/guest.component';
 import { CandidateComponent } from './containers/candidate/candidate.component';
-import { AuthModule } from '@auth0/auth0-angular';
 import { VolunteerServicesService } from './containers/volunteer/services/volunteer-services.service';
 import { ModalComponent } from './containers/candidate/modal/modal.component';
 import { SubmitComponent } from './containers/candidate/submit/submit.component';
@@ -51,26 +50,13 @@ import { MoviePageComponent } from './components/movie-page/movie-page.component
     FormsModule,
     HttpClientModule,
   ],
-  providers: [UserloginService, UsersignupService, VolunteerServicesService, {
-    provide: HTTP_INTERCEPTORS,
-    useClass: TokenInterceptorService,
-    multi: true
-  },
-    // {
-    //   provide: 'SocialAuthServiceConfig',
-    //   useValue: {
-    //     autoLogin: false,
-    //     providers: [
-    //       {
-    //         id: GoogleLoginProvider.PROVIDER_ID,
-    //         provider: new GoogleLoginProvider(
-    //           '284101135074-2f9nigf4fma7s7j2bu6tsqe5ng2uprvf.apps.googleusercontent.com',
-    //         )
-    //       }
-    //     ]
-    //   } as SocialAuthServiceConfig
-    // }
-  ],
+  providers: [UserloginService, UsersignupService, VolunteerServicesService, 
+  //   {
+  //   provide: HTTP_INTERCEPTORS,
+  //   useClass: TokenInterceptorService,
+  //   multi: true
+  // },
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
