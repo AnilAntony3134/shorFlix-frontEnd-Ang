@@ -3,7 +3,7 @@
   background-color: #151515;
   color: white;
   justify-content: center;
-  width: 98.9vw;
+  width: 99.2vw;
   height: auto;
 }
 .movie-list-container {
@@ -56,11 +56,14 @@ position: relative;
   top: 0;
   overflow: scroll;
   }
+  .modalguest::-webkit-scrollbar { 
+    display: none; }
   .modalcontentguest{
   padding: 20px;
   border-radius: 10px;
-  width: min-content;
-  height: auto;
+  width: 300px;
+  height: 70%;
+  overflow-y: scroll;
   background-color: rgb(26, 26, 26);
   }
 .closebutton{
@@ -100,7 +103,7 @@ text-align: center;
 .modalcontentguest form button {
   display: flex;
   padding: 10px;
-  margin: 10px 0px;
+  margin: 10px 0px; 
   border: none;
   background-color: forestgreen;
   justify-content: center;
@@ -110,9 +113,32 @@ text-align: center;
 
  }
 .guest-modal-left{
-  flex: 2;
   color: white;
-}.guest-modal-right2{
+  width: 100%;
+}
+.guest-modal-left form input{
+  margin: 1rem 0rem;
+  font-size: 1.6rem;
+  
+}
+.guest-modal-left form button{
+  width: 100%;
+  background-color: forestgreen;
+  color: black;
+  border: none;
+  padding: 1rem;
+  font-size: 1.6rem;
+  border-radius: 10px;
+  margin-top: 1rem;
+}
+.closebutton-offcanvas{
+  background-color: transparent;
+  color: white;
+  border: none;
+  font-size: 3rem;
+
+}
+.guest-modal-right2{
   flex: 2;
   color: white;
 }
@@ -126,22 +152,6 @@ text-align: center;
 .guest-modal-container{
   display: flex;
   height: min-content;
-  width: 400px;
-}
-.guest-modal-right{
-  background-color: #cf9c50;
-  flex: 1;
-  display: flex;
-  width: 50% ;
-  height: 100%;
-  justify-content: center;
-  align-items: center;
-  object-fit: cover;
-  overflow: hidden;
-}
-.guest-modal-right img{
-  width: 100%;
-  height: max-content;
 }
 .alert-danger{
   padding: 0;

@@ -9,6 +9,15 @@
   z-index: 1000;
   position: fixed;
   width: 100%;
+  padding: 2% 0;
+}
+.header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 65%;
+}
+.header-wrapper::before{
+  display: none;
 }
 .header-title {
   font-size: 36px;

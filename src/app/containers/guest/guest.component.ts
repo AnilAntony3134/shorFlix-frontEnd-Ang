@@ -84,39 +84,52 @@ export class GuestComponent implements OnInit {
     window.location.reload();
   }
   fetchgmovie(){
-    return this.getmovie.getGmovie().subscribe((movies) => {
+    this.getmovie.getGmovie().subscribe((movies) => {
       this.Reviewed=[];
       this.unReviewed=[];
-      this.validMovies=[];
-      this.validMovies2=[];
       this.GMoviedata = Object.values(movies);
-      this.GMoviedatan = movies;
-
-      // to bereviewed feature
-      this.GMoviedatan.forEach((movieb:
-        {guests: any[];})=>{
-        movieb.guests?.forEach((f: string)=>{
-          if(f==this.roleid) {
-            this.validMovies2.push(movieb)
-            this.validMovies2.forEach((e: any)=> {
-              let x = e.url.match(/.*(?:youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=)([^#\&\?]*).*/);
-              this.validMovies.push({...e , urlId: `https://i.ytimg.com/vi/${x[1]}/maxresdefault.jpg`});
+      this.GMoviedatan = Object.values(movies);
+      this.validMovies = this.AssignedOnly(this.GMoviedatan);
+      this.ReviewOrNot(this.validMovies);
+    })
+  }
+  AssignedOnly(GMoviedatan: any){
+    let counter = 0
+    this.validMovies=[];
+    this.validMovies2=[];
+    let y:any;
+    GMoviedatan.forEach((movieb:
+      {guests: string[];})=>{
+        counter++
+      movieb.guests?.forEach((f: string)=>{
+        if(f==this.roleid) {
+          this.validMovies2.push(movieb);
+          this.validMovies2.forEach((e: {url : string})=> {
+            let x:any = e?.url?.match(/.*(?:youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=)([^#\&\?]*).*/);
+            x.forEach((j:any)=>{
+              let counter = 0;
+              counter++;
+              if(counter == 1) y = j;
             })
-          }
-        })
-      })
-
-      // reviewed feature
-      this.validMovies.map((movie: { marks: any[]; })=>{
-        if(!movie.marks.length){
-          this.unReviewed?.push(movie)
-          console.log(this.unReviewed);
+            this.validMovies.push({...e , urlId: `https://i.ytimg.com/vi/${y}/maxresdefault.jpg`});
+          })
         }
-        movie.marks.forEach((e: { _id: string; })=>{
-          if(e._id==this.roleid){ 
-            this.Reviewed?.push(movie)}
-        })
+      })
+      if(counter >= this.GMoviedatan.length-2){
+        this.ReviewOrNot(this.validMovies)
+      }
+    })
+  }
+  ReviewOrNot(validMovies: any){
+    validMovies.map((movie: { marks: any[]; })=>{
+      if(!movie.marks.length){
+        this.unReviewed?.push(movie)
+      }
+      movie.marks.forEach((e: { _id: string; })=>{
+        if(e._id==this.roleid){ 
+          this.Reviewed?.push(movie)}
       })
     })
   }
+
 }

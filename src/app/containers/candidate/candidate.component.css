@@ -16,6 +16,7 @@ body {
   flex-direction: row-reverse;
   justify-content: space-around;
   align-items: center;
+  margin: 150px 0px 0px 0px;
 }
 .infos {
   width: 100%;
@@ -113,6 +114,7 @@ body {
   align-items: center;
   justify-content: flex-start;
   padding: 1vw;
+  margin: 0;
 }
 .section2 {
   width: 48vw;
